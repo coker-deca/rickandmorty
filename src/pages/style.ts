@@ -6,3 +6,9 @@ export const PageWrapper = styled.div`
     border: 1px solid green;
     padding: "0.5rem";
 `;
+
+export const Container = styled.div`
+    background-color: #fff;
+    
+    li {list-style: none;}
+`;

@@ -5,6 +5,7 @@ export const ListBox = styled.div`
     flex-wrap:wrap;
     flex-direction:row;
     width:100%;
+    background: #000;
 `;
 export const Form = styled.form``;
 
@@ -12,11 +13,10 @@ export const Input = styled.input`
     width: "20rem";
     background: "#F2F1F9";
     border: "none";
-    padding: "0.5rem";
 `;
 
 export const Card = styled.div`
-    max-width: 1112px;
+    max-width: 50%;
     padding: 24px 32px;
     border-radius: 4px;
 
@@ -30,15 +30,6 @@ export const Card = styled.div`
         overflow:auto;
     }
 
-    #yellowBox {
-        padding: 2px 10px;
-        background: #fcebdb;
-        width: fit-content;
-        height: 30px;
-        line-height: 24px;
-        color: #f2994a;
-        border-radius: 4px;
-    }
     footer{
         width:100%;
     }
