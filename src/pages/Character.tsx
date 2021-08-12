@@ -19,11 +19,11 @@ const Character: React.FC = () => {
         result.status = 200;
       })
       .catch((err) => setError(err));
-  }, []);
+  }, [id]);
 
   return (
     <>
-      {data && (
+      {!error && data && (
         <Container>
           <main>
             <h1 className="title">{data.name}</h1>

@@ -13,7 +13,7 @@ const SearchPage: React.FC = (): ReactElement => {
     console.log(url);
   const [characters, setCharacters] = useState<any>([]);
   const [error, setError] = useState(null);
-  const [info, setInfo] = useState<any>();
+  // const [info, setInfo] = useState<any>();
   const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -23,10 +23,10 @@ const SearchPage: React.FC = (): ReactElement => {
         console.log(result);
         setCharacters(result.data.results);
         result.status === 200 && setIsLoaded(true);
-        setInfo(result.data.info);
+        // setInfo(result.data.info);
       })
       .catch((err) => setError(err));
-  }, []);
+  }, [url]);
 
     return (
       <PageWrapper>
