@@ -32,7 +32,7 @@ const SearchPage: React.FC = (): ReactElement => {
       <PageWrapper>
         {isLoaded && !error && <List characters={characters} />}
         {error && <h3>An Error as occurred please reload</h3>}
-        {!isLoaded && !error && <h2>Loading</h2>}
+        {!isLoaded && !error && <div className="loader">Loading...</div>}
       </PageWrapper>
     );
 };

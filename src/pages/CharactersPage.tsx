@@ -14,21 +14,21 @@ const CharactersPage: React.FC = (): ReactElement => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetchHttpResponse(url.toString(), {})
-      .then((result) => {
-        console.log(result);
-        setCharacters(result.data.results);
-        result.status === 200 && setIsLoaded(true);
-        // setInfo(result.data.info);
-      })
-      .catch((err) => setError(err));
-  }, [url]);
+  fetchHttpResponse(url.toString(), {})
+    .then((result) => {
+      console.log(result);
+      setCharacters(result.data.results);
+      result.status === 200 && setIsLoaded(true);
+      // setInfo(result.data.info);
+    })
+    .catch((err) => setError(err));
+  }, [url]);      
 
   return (
     <PageWrapper>
       {isLoaded && !error && <List characters={characters} />}
       {error && <h3>An Error as occurred please reload</h3>}
-      {!isLoaded && !error && <h2>Loading</h2>}
+      {!isLoaded && !error && <div className="loader">Loading...</div>}
     </PageWrapper>
   );
 };
