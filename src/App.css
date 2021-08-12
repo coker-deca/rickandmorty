@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Schwifty';
+  src: local('Schwifty'), url(./resources/fonts/get_schwifty.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Ganieo';
+  src: local('Ganieo'), url(./resources/fonts/ganieo/Ganieo\ Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Ganieo';
+  font-weight: 900;
+  src: local('Ganieo'), url(./resources/fonts/ganieo/Ganieo\ Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Ganieo';
+  font-weight: 600;
+  src: local('Ganieo'), url(./resources/fonts/ganieo/Ganieo\ medium.ttf) format('truetype');
+}
