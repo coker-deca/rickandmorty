@@ -22,7 +22,8 @@ const PageLayout: React.FC = ({ children }) => {
   };
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    let searchObject = '';
+    event.preventDefault();
+    let searchObject = "";
 
     if (query.Name) {
       searchObject += !searchObject
@@ -39,7 +40,7 @@ const PageLayout: React.FC = ({ children }) => {
       url.searchParams.delete("gender");
       url.searchParams.append("gender", query.Gender);
     }
-    
+
     if (query.Species) {
       searchObject += !searchObject
         ? `/search?species=${query.Species}`
@@ -47,7 +48,7 @@ const PageLayout: React.FC = ({ children }) => {
       url.searchParams.delete("species");
       url.searchParams.append("species", query.Species);
     }
-    
+
     if (query.Status) {
       searchObject += !searchObject
         ? `/search?status=${query.Status}`

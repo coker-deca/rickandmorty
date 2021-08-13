@@ -10,16 +10,24 @@ type InputType = {
 };
 
 const IconTextInput: React.FC<InputType> = ({
-    title,
-    handleSelectChange,
+  title,
+  handleSelectChange,
   options,
 }) => (
   <Container>
     <label>
-      <span className='title'>{title}</span>
+      <span className="title">{title}</span>
       <InputContainer>
         <div>
-          <select className="input" onChange={(e)=>handleSelectChange(title, e.target.value.toLowerCase())}>
+          <select
+            className="input"
+            onChange={(e) =>
+              handleSelectChange(title, e.target.value.toLowerCase())
+            }
+          >
+            <option disabled selected>
+              Select an option
+            </option>
             {options?.map((option: string, index: number) => (
               <option key={index} value={option}>
                 {option}
