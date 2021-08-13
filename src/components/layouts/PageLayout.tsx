@@ -17,16 +17,45 @@ const PageLayout: React.FC = ({ children }) => {
     setQuery((prev)=>({...prev, Name: searchQuery}));
   };
 
-  const handleSelectChange = (value: any) => {
-    setQuery((prev) => ({ ...prev, ...value }));
-    console.log(value);
-  }
+  const handleSelectChange = (title: string, value: string) => {
+    setQuery((prev) => ({ ...prev, [title]: value }));
+  };
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    const searchObject = `/search?name=${query}`;
-    url.searchParams.delete("name");
-    url.searchParams.append("name", query.Name);
+    let searchObject = '';
+
+    if (query.Name) {
+      searchObject += !searchObject
+        ? `/search?name=${query.Name}`
+        : `&name=${query.Name}`;
+      url.searchParams.delete("name");
+      url.searchParams.append("name", query.Name);
+    }
+
+    if (query.Gender) {
+      searchObject += !searchObject
+        ? `/search?gender=${query.Gender}`
+        : `&gender=${query.Gender}`;
+      url.searchParams.delete("gender");
+      url.searchParams.append("gender", query.Gender);
+    }
+    
+    if (query.Species) {
+      searchObject += !searchObject
+        ? `/search?species=${query.Species}`
+        : `&species=${query.Species}`;
+      url.searchParams.delete("species");
+      url.searchParams.append("species", query.Species);
+    }
+    
+    if (query.Status) {
+      searchObject += !searchObject
+        ? `/search?status=${query.Status}`
+        : `&status=${query.Status}`;
+      url.searchParams.delete("status");
+      url.searchParams.append("status", query.Status);
+    }
+
     history.push(searchObject);
   };
 

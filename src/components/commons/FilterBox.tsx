@@ -5,13 +5,13 @@ import { Form, Input } from "./style";
 interface SearchProps {
   keyword: string;
   setKeyword: (value: string) => void;
-  handleSelectChange: (value: any) => void;
+  handleSelectChange: (title: string, value: string) => void;
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const SearchBar: FC<SearchProps> = ({ keyword, setKeyword, handleClick, handleSelectChange }) => {
   const getAllStatus = ['Dead', 'Alive', 'Unknown'];
-  const getAllSpecies = ['Humans', 'Dog', 'Others'];
+  const getAllSpecies = ['Human', 'Dog', 'Others'];
   const getAllGender = ['Female', 'Male', 'Genderless', 'Unknown'];
 
   return (
