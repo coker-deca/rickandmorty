@@ -22,7 +22,6 @@ const PageLayout: React.FC = ({ children }) => {
     const searchObject = `/search?name=${query}`;
     url.searchParams.delete("name");
     url.searchParams.append("name", query);
-    console.log("surl: ", url);
     history.push(searchObject);
   };
 

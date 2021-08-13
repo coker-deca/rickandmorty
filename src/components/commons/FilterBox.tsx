@@ -20,6 +20,9 @@ const SearchBar: FC<SearchProps> = ({ keyword, setKeyword, handleClick }) => {
           onChange={(e) => setKeyword(e.target.value)}
         />
       </label>
+      <div>
+        
+      </div>
       <button
         onClick={(event: React.MouseEvent<HTMLButtonElement>) => handleClick(event)}
       >

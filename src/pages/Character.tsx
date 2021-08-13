@@ -6,7 +6,6 @@ import { Container } from './style';
 
 const Character: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  console.log("surl", id);
   const [data, setData] = useState<any>();
   const [error, setError] = useState<any>();
   const baseUrl = "https://rickandmortyapi.com/api/character/";
@@ -14,7 +13,6 @@ const Character: React.FC = () => {
   useEffect(() => {
     fetchHttpResponse(`${baseUrl}${id}`, {})
       .then((result) => {
-        console.log(result);
         setData(result.data);
         result.status = 200;
       })

@@ -10,20 +10,15 @@ const SearchPage: React.FC = (): ReactElement => {
     // eslint-disable-next-line no-restricted-globals
     const query = location.search.substring(1);
     const url = `${baseUrl}?${query}`;
-    console.log(url);
   const [characters, setCharacters] = useState<any>([]);
   const [error, setError] = useState(null);
-  // const [info, setInfo] = useState<any>();
   const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        console.log(url);
     fetchHttpResponse(url.toString(), {})
       .then((result) => {
-        console.log(result);
         setCharacters(result.data.results);
         result.status === 200 && setIsLoaded(true);
-        // setInfo(result.data.info);
       })
       .catch((err) => setError(err));
   }, [url]);
