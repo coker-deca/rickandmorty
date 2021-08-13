@@ -61,3 +61,7 @@ export const LogoText = styled.div`
         }
     }
 `;
+
+export const SpecialDiv = styled.div`
+    li{list-style: none;}
+`;

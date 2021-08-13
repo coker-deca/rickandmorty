@@ -8,6 +8,8 @@ import { FetcherProvider } from './context/fetchContext';
 import Character from './pages/Character';
 import CharactersPage from './pages/CharactersPage';
 import SearchPage from './pages/SearchPage';
+import LocationsPage from './pages/LocationsPage';
+import EpisodesPage from './pages/EpisodePage';
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
             </Route>
             <Route path="/search">
               <SearchPage />
+            </Route>
+            <Route path="/locations">
+              <LocationsPage />
+            </Route>
+            <Route path="/episodes">
+              <EpisodesPage />
             </Route>
           </PageLayout>
         </div>

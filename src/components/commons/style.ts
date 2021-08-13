@@ -39,8 +39,7 @@ export const Input = styled.input`
 `;
 
 export const Card = styled.div`
-    max-width: 43%;
-    padding: 24px 32px;
+    width: 43%;
     border-radius: 4px;
     h1 {color: orangered;}
     img{max-width: 50%}
@@ -51,6 +50,7 @@ export const Card = styled.div`
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         margin: 20px;  
         text-align:center;
+        justify-content:space-around;
         font-family: arial;
         overflow:auto;
         color: blanchedalmond;
