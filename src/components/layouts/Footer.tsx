@@ -12,9 +12,9 @@ const Footer: React.FC<{ isMobile: boolean }> = ({ isMobile }) => (
         </div>
         <div className="column">
           <p>Resources</p>
-          <Link to="/">Characters</Link>
-          <Link to="/">Locations</Link>
-          <Link to="/">Episodes</Link>
+          <Link to="/characters">Characters</Link>
+          <Link to="/locations">Locations</Link>
+          <Link to="/episodes">Episodes</Link>
         </div>
 
         <div className="column">

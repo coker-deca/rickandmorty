@@ -56,7 +56,7 @@ const Character: React.FC = () => {
           </main>
         </Container>
       )}
-      {!data && <div>Not Found</div>}
+      {!data && <div className="loader">Loading...</div>}
     </>
   );
 };

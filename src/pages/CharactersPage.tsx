@@ -1,31 +1,22 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useContext } from 'react';
 
 import List from '../components/commons/List';
-import { fetchHttpResponse } from '../utils/api';
+import { FetcherContext, useFetcher } from '../context/fetchContext';
 import { PageWrapper } from './style';
 
 const baseUrl = "https://rickandmortyapi.com/api/character/";
 
 const CharactersPage: React.FC = (): ReactElement => {
   const url = new URL(baseUrl);
-  const [characters, setCharacters] = useState<any>([]);
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-  fetchHttpResponse(url.toString(), {})
-    .then((result) => {
-      setCharacters(result.data.results);
-      result.status === 200 && setIsLoaded(true);
-    })
-    .catch((err) => setError(err));
-  }, [url]);      
+  const { values, loading, error } = useContext(FetcherContext);
+  useFetcher(url.toString());
 
   return (
     <PageWrapper>
-      {isLoaded && !error && <List characters={characters} />}
+      {values && <List characters={values} />}
       {error && <h3>An Error as occurred please reload</h3>}
-      {!isLoaded && !error && <div className="loader">Loading...</div>}
+      {loading && <div className="loader">Loading...</div>}
     </PageWrapper>
   );
 };
