@@ -48,7 +48,7 @@ export const PageWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-    background-color: #fff;
+    background-color: purple;
     
     li {list-style: none;}
 `;

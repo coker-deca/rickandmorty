@@ -5,7 +5,6 @@ export const fetchHttpResponse = async (url: string, headers: AxiosRequestConfig
         const response = await axios.get(url, headers);
         return response;
     } catch (error) {
-        console.log(error);
-        throw error;
+        throw error.message;
     }
 };
